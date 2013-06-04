@@ -28,5 +28,5 @@ Alleyoop support.
 
 ### Downloading
 
-Github: https://github.com/shawnrice/alfred2-dhcp-toggle
-Direct download: https://github.com/shawnrice/alfred2-dhcp-toggle/raw/master/workflows/dhcp-toggle.alfredworkflow
+* Github: https://github.com/shawnrice/alfred2-dhcp-toggle
+* Direct download: [ Workflow | https://github.com/shawnrice/alfred2-dhcp-toggle/raw/master/workflows/dhcp-toggle.alfredworkflow ]

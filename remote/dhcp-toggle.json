@@ -1,5 +1,5 @@
 {
-    "version": 1.0,
+    "version": 1.1,
     "download_url": "https://github.com/shawnrice/alfred2-dhcp-toggle/raw/master/workflows/dhcp-toggle.alfredworkflow",
-    "description": "Initial release."
+    "description": "Includes notifications."
 }
