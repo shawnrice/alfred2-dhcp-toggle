@@ -17,10 +17,12 @@ else
 
 	if (( [ $arg == "auto" ] ) || ( [ $arg == "automatic" ] )); then
 		networksetup -setdhcp Wi-Fi
+		#networksetup -setdnsservers Wi-Fi "Empty"
 		echo "DHCP now using an automatic configuration."
 		exit
 	else
 		networksetup -setmanual Wi-Fi $arg 255.255.255.0 ${arg%.*}.1
+		#networksetup -setdnsservers Wi-Fi ${arg%.*}.1
 		echo -e "IPv4 : $arg\nSubnet : 255.255.255.0\nRouter : ${arg%.*}.1";
 		exit
 	fi
