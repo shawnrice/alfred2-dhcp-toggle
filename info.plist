@@ -36,7 +36,7 @@
 				<key>keyword</key>
 				<string>dhcp</string>
 				<key>subtext</key>
-				<string>Arguments: "auto" or "man"</string>
+				<string>Arguments: "auto" or an IP address</string>
 				<key>text</key>
 				<string>Toggle DHCP</string>
 				<key>withspace</key>
@@ -52,8 +52,20 @@
 			<dict>
 				<key>escaping</key>
 				<integer>127</integer>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
 				<key>script</key>
 				<string>scripts/dhcp.toggle.sh {query}</string>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>DHCP Configuration</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -67,7 +79,7 @@
 	<string>Enter a command:
 
 dhcp "auto" or "automatic" as an argument sets the DHCP to auto.
-dhcp "man" or "manual" as the argument sets the DHCP to a manual IP address at 192.168.10.* where the * is a randomly generated number between 100 and 255.
+dhcp "enter a manual IP address" as the argument sets the DHCP to a manual IP address. Generally the IP address would be something like 192.168.1.* where the * is a number between 2 and 255, but it varies depending on your router setup.
 
 You need to type in your user password each time you use this workflow.</string>
 	<key>uidata</key>
