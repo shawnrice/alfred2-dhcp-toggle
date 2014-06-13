@@ -67,7 +67,8 @@
 			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
-set autoIP to "sudo networksetup -setdnsservers Wi-Fi empty &amp;&amp; sudo networksetup -setdhcp Wi-Fi; echo 'DHCP now using an automatic configuration.'"set manIP to "sudo networksetup -setdnsservers Wi-Fi ${arg%.*}.1 &amp;&amp; sudo networksetup -setmanual Wi-Fi $arg 255.255.255.0 ${arg%.*}.1; echo \"IPv4 : $arg
+set autoIP to "networksetup -setdnsservers Wi-Fi empty; networksetup -setdhcp Wi-Fi; echo 'DHCP now using an automatic configuration.'"
+set manIP to "networksetup -setdnsservers Wi-Fi ${arg%.*}.1; networksetup -setmanual Wi-Fi $arg 255.255.255.0 ${arg%.*}.1; echo \"IPv4 : $arg
 Subnet : 255.255.255.0
 Router : ${arg%.*}.1\""if q is not "" then	tell current application		activate		if contents of q is in {"auto", "automatic"} then			do shell script autoIP password "" with administrator privileges		else			do shell script "arg=" &amp; q &amp; " &amp;&amp; " &amp; manIP password "" with administrator privileges		end if	end tellend if
 
