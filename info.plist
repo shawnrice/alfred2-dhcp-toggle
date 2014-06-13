@@ -12,14 +12,14 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>612DBD4A-1E85-466D-9ED4-923A46789870</string>
+				<string>CA3B68ED-6F29-4199-BA05-0BFCC2DDDDB7</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
 		</array>
-		<key>612DBD4A-1E85-466D-9ED4-923A46789870</key>
+		<key>CA3B68ED-6F29-4199-BA05-0BFCC2DDDDB7</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -65,17 +65,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>scripts/dhcp.toggle.sh {query}</string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+set autoIP to "sudo networksetup -setdnsservers Wi-Fi empty &amp;&amp; sudo networksetup -setdhcp Wi-Fi; echo 'DHCP now using an automatic configuration.'"set manIP to "sudo networksetup -setdnsservers Wi-Fi ${arg%.*}.1 &amp;&amp; sudo networksetup -setmanual Wi-Fi $arg 255.255.255.0 ${arg%.*}.1; echo \"IPv4 : $arg
+Subnet : 255.255.255.0
+Router : ${arg%.*}.1\""if q is not "" then	tell current application		activate		if contents of q is in {"auto", "automatic"} then			do shell script autoIP password "" with administrator privileges		else			do shell script "arg=" &amp; q &amp; " &amp;&amp; " &amp; manIP password "" with administrator privileges		end if	end tellend if
+
+end alfred_script
+</string>
+				<key>cachescript</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.action.applescript</string>
 			<key>uid</key>
-			<string>612DBD4A-1E85-466D-9ED4-923A46789870</string>
+			<string>CA3B68ED-6F29-4199-BA05-0BFCC2DDDDB7</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -119,7 +123,7 @@ You need to type in your user password each time you use this workflow.</string>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
-		<key>612DBD4A-1E85-466D-9ED4-923A46789870</key>
+		<key>CA3B68ED-6F29-4199-BA05-0BFCC2DDDDB7</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
