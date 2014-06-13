@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>DHCP Toggle</name>
-  <version>1.0</version>
-  <bundle>com.shawn.patrick.rice.dhcp.toggle</bundle>
-  <updated>1389350295</updated>
-  <file>dhcp-toggle.alfredworkflow</file>
-</workflow>
