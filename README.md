@@ -11,9 +11,7 @@ Generally, you need to do this when you connect to a network and get the ! over 
 Enter a command:
 
 dhcp "auto" or "automatic" as an argument sets the DHCP to auto.
-dhcp "man" or "manual" as the argument sets the DHCP to a manual IP address at 192.168.10.* where the * is a randomly generated number between 100 and 255.
-
-If you type in "dhcp" with no argument, then it will toggle from auto to manual.
+dhcp IP address as the argument (e.g. dhcp 192.168.1.13) sets the DHCP to a manual IP address. Generally the IP address would be something like 192.168.1.* where the * is a number between 2 and 255, but it varies depending on your router setup.
 
 You need to type in your user password each time you use this workflow.
 
