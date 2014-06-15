@@ -20,9 +20,13 @@ else
 		echo "DHCP now using an automatic configuration."
 		exit
 	elif (( [ $arg == "manual" ] ) || ( [ $arg == "man" ] )); then
-		num=$(php -r 'echo rand(100 , 255);')
+		# num=$(php -r 'echo rand(100 , 255);')
 		networksetup -setmanualwithdhcprouter Wi-Fi 192.168.10.$num
-		echo "DHCP now using a manual configuration with IP 192.168.10.$num";
+		# echo "DHCP now using a manual configuration with IP 192.168.10.$num";
+		echo 192.168.10.$num
+		exit
+	elif [[ "$arg" =~ [0-9]{1,}\.[0-9]{1,}\.[0-9]{1,}\.[0-9]{1,} ]]; then
+		echo $arg
 		exit
 	fi
 fi
