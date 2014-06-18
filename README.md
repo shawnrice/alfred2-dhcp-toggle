@@ -4,7 +4,7 @@ Strangely, Airport cards don't always play well with every type of router. A sta
 
 This script does that for you.
 
-Generally, you need to do this when you connect to a network and get the ! over the Airport icon in the menu bar. That's not always the case, but sometimes it is.
+Generally, you need to do this when you connect to a network and get the __!__ over the Airport icon in the menu bar. That's not always the case, but sometimes it is.
 
 ## Use
 
@@ -15,7 +15,7 @@ dhcp "man" or "manual" as the argument sets the DHCP to a manual IP address at 1
 
 If you type in "dhcp" with no argument, then it will toggle from auto to manual.
 
-You need to type in your user password each time you use this workflow.
+Note: _you need to type in your user password each time you use this workflow_.
 
 
 ### Notes
@@ -24,9 +24,8 @@ The command line utility has a tiny bit of lag, so expect to wait a moment befor
 
 No notifications are sent through Alfred. Everything should start working a moment after entering your password.
 
-Alleyoop support.
-
 ### Downloading
 
+* Packal: http://www.packal.org/workflow/dhcp-toggle
 * Github: https://github.com/shawnrice/alfred2-dhcp-toggle
 * Direct download: [ Workflow | https://github.com/shawnrice/alfred2-dhcp-toggle/raw/master/workflows/dhcp-toggle.alfredworkflow ]
