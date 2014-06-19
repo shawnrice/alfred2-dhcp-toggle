@@ -67,7 +67,7 @@ if [[ "$method" =~ ^p ]]; then
 			if [[ "$prefixes" == *"$param"* ]]; then
 				addResult "" "" "'$param' is already in the prefixes list" "Error: $param is not a valid IP prefix" "" "no" ""	
 			else
-				addResult "" "add-$param" "Add $param to $prefixes the prefixes list" "$param" "" "yes" ""
+				addResult "" "add-$param" "Add $param to the prefixes list" "$param" "" "yes" ""
 			fi
 		else
 			addResult "" "" "Add $param to the prefixes list" "Error: $param is not a valid IP prefix" "" "no" ""
