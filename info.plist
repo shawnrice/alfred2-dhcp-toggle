@@ -3,14 +3,47 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.shawn.patrick.rice.toggle.dhcp</string>
+	<string>com.shawn.patrick.rice.dhcp.toggle</string>
 	<key>connections</key>
 	<dict>
-		<key>1999CED0-8002-4924-AC61-0A2AF8D85592</key>
+		<key>1E2B595E-6C1E-4D6E-806E-2370AD33EA81</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>612DBD4A-1E85-466D-9ED4-923A46789870</string>
+				<string>3B1A9684-9208-48FD-980A-23841D41D8FA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>3B1A9684-9208-48FD-980A-23841D41D8FA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BCA4967F-E7B1-4C49-A1E9-F6A5B4C5BC07</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>4E9BA876-B6F6-4DDA-9BE2-09723F91E680</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BCA4967F-E7B1-4C49-A1E9-F6A5B4C5BC07</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>BCA4967F-E7B1-4C49-A1E9-F6A5B4C5BC07</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E912C4E3-4830-4DA5-80BD-F9548EFD101C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -25,42 +58,113 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Toggle DHCP</string>
+	<string>DHCP Toggle</string>
 	<key>objects</key>
 	<array>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>DHCP Configuration</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E912C4E3-4830-4DA5-80BD-F9548EFD101C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
 				<integer>0</integer>
 				<key>keyword</key>
 				<string>dhcp</string>
+				<key>script</key>
+				<string>./scripts/script.sh "{query}"</string>
 				<key>subtext</key>
-				<string>Arguments: "auto" or "man"</string>
-				<key>text</key>
-				<string>Toggle DHCP</string>
+				<string>Alter your DHCP Configuration</string>
+				<key>title</key>
+				<string>DHCP Toggle</string>
+				<key>type</key>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>1999CED0-8002-4924-AC61-0A2AF8D85592</string>
+			<string>4E9BA876-B6F6-4DDA-9BE2-09723F91E680</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>0</integer>
 				<key>script</key>
-				<string>scripts/dhcp.toggle.sh {query}</string>
+				<string>./scripts/control.sh "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>612DBD4A-1E85-466D-9ED4-923A46789870</string>
+			<string>BCA4967F-E7B1-4C49-A1E9-F6A5B4C5BC07</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>configure</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>1E2B595E-6C1E-4D6E-806E-2370AD33EA81</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>./scripts/configure-script.sh "{query}"</string>
+				<key>title</key>
+				<string>Set Something Here</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>3B1A9684-9208-48FD-980A-23841D41D8FA</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -72,15 +176,30 @@ dhcp "man" or "manual" as the argument sets the DHCP to a manual IP address at 1
 You need to type in your user password each time you use this workflow.</string>
 	<key>uidata</key>
 	<dict>
-		<key>1999CED0-8002-4924-AC61-0A2AF8D85592</key>
+		<key>1E2B595E-6C1E-4D6E-806E-2370AD33EA81</key>
 		<dict>
 			<key>ypos</key>
-			<real>10</real>
+			<real>250</real>
 		</dict>
-		<key>612DBD4A-1E85-466D-9ED4-923A46789870</key>
+		<key>3B1A9684-9208-48FD-980A-23841D41D8FA</key>
 		<dict>
 			<key>ypos</key>
-			<real>10</real>
+			<real>250</real>
+		</dict>
+		<key>4E9BA876-B6F6-4DDA-9BE2-09723F91E680</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>BCA4967F-E7B1-4C49-A1E9-F6A5B4C5BC07</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
+		<key>E912C4E3-4830-4DA5-80BD-F9548EFD101C</key>
+		<dict>
+			<key>ypos</key>
+			<real>30</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
